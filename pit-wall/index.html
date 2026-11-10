@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pit Wall - GP de São Paulo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- 1. HEADER / TOPBAR -->
+    <header class="topbar">
+        <div class="logo">
+            <span class="brand-pit">PIT</span><span class="brand-wall">WALL</span>
+        </div>
+        <nav class="nav-menu">
+            <a href="#pilotos">PILOTOS</a>
+            <a href="#classificacao">CLASSIFICAÇÃO</a>
+            <a href="#ingressos">INGRESSOS</a>
+        </nav>
+        <a href="#ingressos" class="btn-topbar">COMPRAR INGRESSO</a>
+    </header>
+
+    <!-- 2. HERO + KERB -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <span class="hero-subtitle">AUTÓDROMO DE INTERLAGOS • NOVEMBRO DE 2026</span>
+                <h1 class="hero-title">GP DE<br><span class="hero-title-highlight">SÃO PAULO</span></h1>
+                <p class="hero-description">
+                    71 voltas, 22 carros no grid e a torcida brasileira empurrando o Bortoleto na reta.
+                </p>
+                <div class="hero-actions">
+                    <a href="#ingressos" class="btn-primary">GARANTIR MEU LUGAR</a>
+                    <a href="#classificacao" class="btn-secondary">VER CLASSIFICAÇÃO</a>
+                </div>
+            </div>
+
+            <div class="hero-media">
+                <div class="hero-image-wrapper">
+                    <img src="https://images.pexels.com/photos/29276537/pexels-photo-29276537.jpeg"
+                        alt="Carro de F1 em Interlagos" class="hero-img">
+
+                    <!-- Estatísticas sobrepostas com divisores -->
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">71</span>
+                            <span class="stat-label">VOLTAS</span>
+                        </div>
+
+                        <div class="stat-divider"></div>
+
+                        <div class="stat-item">
+                            <span class="stat-number">4.309</span>
+                            <span class="stat-label">KM POR VOLTA</span>
+                        </div>
+
+                        <div class="stat-divider"></div>
+
+                        <div class="stat-item">
+                            <span class="stat-number">15</span>
+                            <span class="stat-label">CURVAS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Zebra (Kerb) -->
+        <div class="kerb"></div>
+
+        <div class="grid-pilotos">
+            <!-- Card 1: Leclerc / Ferrari -->
+            <div class="card-piloto" style="--cor-piloto: #e10600;">
+                <span class="numero-piloto">16</span>
+                <h3 class="nome-piloto">CHARLES <strong>LECLERC</strong></h3>
+                <span class="equipe-piloto">Ferrari</span>
+            </div>
+
+            <!-- Card 2: Piastri / McLaren -->
+            <div class="card-piloto" style="--cor-piloto: #ff8000;">
+                <span class="numero-piloto">81</span>
+                <h3 class="nome-piloto">OSCAR <strong>PIASTRI</strong></h3>
+                <span class="equipe-piloto">McLaren</span>
+            </div>
+
+            <!-- Card 3: Russell / Mercedes -->
+            <div class="card-piloto" style="--cor-piloto: #02a085;">
+                <span class="numero-piloto">63</span>
+                <h3 class="nome-piloto">GEORGE <strong>RUSSELL</strong></h3>
+                <span class="equipe-piloto">Mercedes</span>
+            </div>
+
+            <!-- Card 4: Bortoleto / Audi -->
+            <div class="card-piloto" style="--cor-piloto: #838a9b;">
+                <span class="numero-piloto">5</span>
+                <h3 class="nome-piloto">GABRIEL <strong>BORTOLETO</strong></h3>
+                <span class="equipe-piloto">Audi</span>
+            </div>
+        </div>
+
+        <!-- 4. SECTION CLASSIFICAÇÃO -->
+        <section id="classificacao" class="section-container">
+            <h2 class="section-title"><span>02</span> CLASSIFICAÇÃO</h2>
+
+            <form class="filter-form" onsubmit="return false;">
+                <div class="form-group">
+                    <label for="buscar">BUSCAR PILOTO</label>
+                    <input type="text" id="buscar" placeholder="Nome ou equipe...">
+                </div>
+                <div class="form-group">
+                    <label for="equipe">EQUIPE</label>
+                    <select id="equipe">
+                        <option value="">Todas as equipes</option>
+                        <option value="mclaren">McLaren</option>
+                        <option value="ferrari">Ferrari</option>
+                        <option value="mercedes">Mercedes</option>
+                        <option value="audi">Audi</option>
+                    </select>
+                </div>
+                <button type="button" class="btn-filter">FILTRAR</button>
+            </form>
+
+            <div class="table-responsive">
+                <table class="table-classificacao">
+                    <thead>
+                        <tr>
+                            <th>POS.</th>
+                            <th>PILOTO</th>
+                            <th class="hide-mobile">EQUIPE</th>
+                            <th class="hide-mobile">VITÓRIAS</th>
+                            <th class="hide-mobile">DIFERENÇA</th>
+                            <th>PONTOS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="pos-badge pos-1">1</span></td>
+                            <td><span class="bar-orange"></span> Oscar Piastri</td>
+                            <td class="hide-mobile">McLaren</td>
+                            <td class="hide-mobile">6</td>
+                            <td class="hide-mobile">LÍDER</td>
+                            <td class="points">366</td>
+                        </tr>
+                        <tr>
+                            <td><span class="pos-badge">2</span></td>
+                            <td><span class="bar-red"></span> Charles Leclerc</td>
+                            <td class="hide-mobile">Ferrari</td>
+                            <td class="hide-mobile">5</td>
+                            <td class="hide-mobile">-18</td>
+                            <td class="points">348</td>
+                        </tr>
+                        <tr>
+                            <td><span class="pos-badge">3</span></td>
+                            <td><span class="bar-teal"></span> George Russell</td>
+                            <td class="hide-mobile">Mercedes</td>
+                            <td class="hide-mobile">4</td>
+                            <td class="hide-mobile">-41</td>
+                            <td class="points">325</td>
+                        </tr>
+                        <tr>
+                            <td><span class="pos-badge">4</span></td>
+                            <td><span class="bar-grey"></span> Gabriel Bortoleto</td>
+                            <td class="hide-mobile">Audi</td>
+                            <td class="hide-mobile">0</td>
+                            <td class="hide-mobile">-298</td>
+                            <td class="points">68</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- 5. SECTION INGRESSOS -->
+        <section id="ingressos" class="section-container">
+            <h2 class="section-title"><span>03</span> INGRESSOS</h2>
+
+            <div class="ingressos-wrapper">
+                <!-- Coluna Esquerda: Informações -->
+                <div class="ingressos-info">
+                    <p class="ingressos-subtext">Escolha o setor e venha ver a decisão do título de perto.</p>
+
+                    <div class="alert-box">
+                        Últimos 120 lugares no Setor da Reta!
+                    </div>
+
+                    <ul class="precos-list">
+                        <li>
+                            <span>Arquibancada A</span>
+                            <strong class="price-red">R$ 480</strong>
+                        </li>
+                        <li>
+                            <span>Setor da Reta</span>
+                            <strong class="price-red">R$ 890</strong>
+                        </li>
+                        <li>
+                            <span>Box VIP</span>
+                            <strong class="price-red">R$ 2.400</strong>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Coluna Direita: Formulário -->
+                <form class="form-ingressos">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nome">NOME COMPLETO</label>
+                            <input type="text" id="nome" placeholder="Como está no documento" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-MAIL</label>
+                            <input type="email" id="email" placeholder="voce@email.com" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="setor">SETOR</label>
+                            <select id="setor" required>
+                                <option value="">Escolha o setor</option>
+                                <option value="a">Arquibancada A</option>
+                                <option value="reta">Setor da Reta</option>
+                                <option value="vip">Box VIP</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="dia">DIA</label>
+                            <input type="date" id="dia" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="qtd">INGRESSOS</label>
+                            <input type="number" id="qtd" min="1" max="6" value="2">
+                            <small class="input-hint">Até 6 por pessoa.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="perfil">SEU PERFIL (OPCIONAL)</label>
+                            <input type="url" id="perfil" placeholder="https://instagram.com/...">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="foto">FOTO DA TORCIDA PARA O TELÃO</label>
+                        <input type="file" id="foto" accept="image/png, image/jpeg">
+                        <small class="input-hint">JPG ou PNG - a melhor foto aparece na telão da reta!</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="recado">RECADO PARA O SEU PILOTO</label>
+                        <textarea id="recado" rows="3"
+                            placeholder="Vai, Bortoleto! Interlagos é sua casa..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">RESERVAR INGRESSOS</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- 6. FOOTER -->
+        <footer class="footer">
+            <p>PITWALL - Projeto de estudo de HTML e CSS - Daniel Pitres Crisóstomo de Oliveira</p>
+        </footer>
+
+</body>
+
+</html>

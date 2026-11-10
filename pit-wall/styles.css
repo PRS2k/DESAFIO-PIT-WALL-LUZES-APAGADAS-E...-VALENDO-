@@ -1,0 +1,653 @@
+/* RESET E CONFIGURAÇÕES GERAIS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #0b0c10;
+    color: #ffffff;
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 1. HEADER / TOPBAR */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 4rem;
+    background-color: #07080a;
+    border-bottom: 1px solid #1a1c23;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.brand-pit {
+    font-weight: 900;
+    font-style: italic;
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+
+.brand-wall {
+    font-weight: 900;
+    font-style: italic;
+    font-size: 1.5rem;
+    color: #e10600;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #a0a5b5;
+    transition: color 0.2s;
+}
+
+.nav-menu a:hover {
+    color: #ffffff;
+}
+
+.btn-topbar {
+    background-color: #e10600;
+    color: #ffffff;
+    padding: 0.6rem 1.2rem;
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+    border-radius: 2px;
+    transition: background 0.2s;
+}
+
+.btn-topbar:hover {
+    background-color: #b80500;
+}
+
+/* 2. HERO SECTION */
+.hero {
+    background: linear-gradient(135deg, #07080a 0%, #0d0f14 100%);
+    padding: 4rem 4rem 2rem 4rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.hero-subtitle {
+    color: #e10600;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 900;
+    font-style: italic;
+    line-height: 1;
+    margin-bottom: 1.5rem;
+}
+
+.hero-title-highlight {
+    color: #e10600;
+}
+
+.hero-description {
+    color: #a0a5b5;
+    font-size: 1rem;
+    max-width: 450px;
+    margin-bottom: 2rem;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-primary {
+    background-color: #e10600;
+    color: #ffffff;
+    padding: 0.8rem 1.5rem;
+    font-weight: 800;
+    font-size: 0.85rem;
+    border-radius: 2px;
+}
+
+.btn-secondary {
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    padding: 0.8rem 1.5rem;
+    font-weight: 800;
+    font-size: 0.85rem;
+    border-radius: 2px;
+}
+
+.hero-media {
+    position: relative;
+}
+
+/* CONTAINER PRINCIPAL DA MÍDIA */
+.hero-media {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* CAIXA COM MASCARAMENTO E BORDA DIAGONAL */
+.hero-image-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 550px;
+    height: 380px;
+    overflow: hidden;
+    background-color: #0b0c10;
+}
+
+/* FAIXA VERMELHA DIAGONAL NA ESQUERDA */
+.hero-image-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -90px;
+    width: 130px;
+    height: 100%;
+    background-color: #0b0c10;
+    border-right: 8px solid #e10600;
+    /* Linha vermelha inclina junto */
+    transform: skewX(-20deg);
+    /* Inclinação da diagonal */
+    z-index: 2;
+}
+
+/* IMAGEM DA PISTA */
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* DEGRADÊ ESCURO E CONTAINER DOS NÚMEROS */
+.hero-stats {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem 1rem;
+    background: linear-gradient(to top, rgba(11, 12, 16, 0.95) 15%, rgba(11, 12, 16, 0) 100%);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 3;
+}
+
+/* TIPOGRAFIA DOS DADOS */
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.2rem;
+    font-weight: 900;
+    font-style: italic;
+    color: #ffffff;
+    line-height: 1;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.75rem;
+    color: #8c92a4;
+    margin-top: 0.35rem;
+    letter-spacing: 1px;
+}
+
+/* LINHAS DIVISÓRIAS FINAS ENTRE OS NÚMEROS */
+.stat-divider {
+    width: 1px;
+    height: 28px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.hero-stats {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem 0;
+    backdrop-filter: blur(4px);
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 900;
+    font-style: italic;
+    color: #ffffff;
+}
+
+.stat-label {
+    font-size: 0.65rem;
+    color: #a0a5b5;
+    font-weight: 700;
+}
+
+/* ZEBRA (KERB) */
+.kerb {
+    height: 12px;
+    background: repeating-linear-gradient(-45deg,
+            #e10600,
+            #e10600 15px,
+            #ffffff 15px,
+            #ffffff 30px);
+    margin-bottom: 3rem;
+}
+
+/* SEÇÕES GERAIS */
+.section-container {
+    max-width: 1200px;
+    margin: 0 auto 4rem auto;
+    padding: 0 2rem;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 900;
+    font-style: italic;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.section-title span {
+    color: #e10600;
+    font-size: 1rem;
+}
+
+/* CONTAINER GRID */
+.grid-pilotos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* CARD QUADRADO */
+.card-piloto {
+    background-color: #12141d;
+    padding: 1.5rem;
+    border-radius: 4px;
+    border-top: 4px solid var(--cor-piloto);
+    aspect-ratio: 1 / 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: transform 0.2s;
+}
+
+/* NÚMERO (MAIOR) */
+.numero-piloto {
+    font-size: 5rem;
+    /* Aumentado de 3.5rem para 5rem */
+    font-weight: 900;
+    font-style: italic;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    color: var(--cor-piloto);
+    opacity: 0.35;
+}
+
+/* NOME DO PILOTO (MAIOR) */
+.nome-piloto {
+    color: #ffffff;
+    font-size: 1.35rem;
+    /* Aumentado de 1rem para 1.35rem */
+    font-weight: 400;
+    margin: 0;
+    text-transform: uppercase;
+    line-height: 1.1;
+}
+
+.nome-piloto strong {
+    font-weight: 900;
+}
+
+/* NOME DA EQUIPA (MAIOR) */
+.equipe-piloto {
+    color: #71788e;
+    font-size: 1rem;
+    /* Aumentado de 0.85rem para 1rem */
+    margin-top: 0.35rem;
+}
+
+.piloto-numero {
+    font-size: 3.5rem;
+    font-weight: 900;
+    font-style: italic;
+    line-height: 1;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.red-text {
+    color: #e10600;
+}
+
+.yellow-text {
+    color: #ffb800;
+}
+
+.teal-text {
+    color: #00d2be;
+}
+
+.grey-text {
+    color: #a0a5b5;
+}
+
+.piloto-nome {
+    font-size: 1.1rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.piloto-equipe {
+    font-size: 0.8rem;
+    color: #6c727f;
+}
+
+/* 4. CLASSIFICAÇÃO */
+.filter-form {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-end;
+    margin-bottom: 1.5rem;
+    background-color: #12141d;
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    flex: 1;
+}
+
+.form-group label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: #a0a5b5;
+    letter-spacing: 0.5px;
+}
+
+.filter-form input,
+.filter-form select,
+.form-ingressos input,
+.form-ingressos select,
+.form-ingressos textarea {
+    background-color: #07080a;
+    border: 1px solid #232733;
+    color: #ffffff;
+    padding: 0.6rem 0.8rem;
+    border-radius: 3px;
+    font-size: 0.85rem;
+}
+
+.filter-form input:focus,
+.filter-form select:focus,
+.form-ingressos input:focus,
+.form-ingressos select:focus,
+.form-ingressos textarea:focus {
+    outline: 1px solid #e10600;
+}
+
+.btn-filter {
+    background-color: #1a1c23;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    padding: 0.6rem 1.5rem;
+    font-weight: 700;
+    font-size: 0.75rem;
+    cursor: pointer;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+.table-classificacao {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #12141d;
+    text-align: left;
+}
+
+/* Seleciona a primeira linha da tabela de classificação */
+.table-classificacao tbody tr:first-child {
+    background-color: #43100e;
+    /* Vermelho F1 */
+}
+
+
+.table-classificacao th,
+.table-classificacao td {
+    padding: 1rem;
+    border-bottom: 1px solid #1a1c23;
+    font-size: 0.85rem;
+}
+
+.table-classificacao th {
+    color: #6c727f;
+    font-weight: 700;
+    font-size: 0.7rem;
+}
+
+.pos-badge {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-color: #e60606;
+    text-align: center;
+    line-height: 24px;
+    font-weight: 700;
+    border-radius: 2px;
+}
+
+/* Fundo branco e texto preto apenas para a 2ª, 3ª e 4ª posição */
+.pos-badge:not(.pos-1) {
+    background-color: #ffffff !important;
+    /* Fundo branco */
+    color: #000000 !important;
+    /* Número preto */
+
+    /* Mantém o formato e alinhamento do quadrado */
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.bar-orange {
+    border-left: 3px solid #ffb800;
+    padding-left: 8px;
+}
+
+.bar-red {
+    border-left: 3px solid #d60700;
+    padding-left: 8px;
+}
+
+.bar-teal {
+    border-left: 3px solid #00d2be;
+    padding-left: 8px;
+}
+
+.bar-grey {
+    border-left: 3px solid #a0a5b5;
+    padding-left: 8px;
+}
+
+.points {
+    font-weight: 800;
+}
+
+/* 5. INGRESSOS */
+.ingressos-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.8fr;
+    gap: 2.5rem;
+}
+
+.ingressos-subtext {
+    color: #a0a5b5;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+.alert-box {
+    border: 1px solid #ffb800;
+    color: #ffb800;
+    padding: 0.8rem 1rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    border-radius: 3px;
+}
+
+.precos-list {
+    list-style: none;
+}
+
+.precos-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #1a1c23;
+    font-size: 0.85rem;
+}
+
+.price-red {
+    color: #e10600;
+}
+
+.form-ingressos {
+    background-color: #12141d;
+    padding: 2rem;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.form-row {
+    display: flex;
+    gap: 1rem;
+}
+
+.input-hint {
+    font-size: 0.65rem;
+    color: #6c727f;
+}
+
+.btn-submit {
+    background-color: #e10600;
+    color: #ffffff;
+    border: none;
+    padding: 1rem;
+    font-weight: 800;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border-radius: 2px;
+    margin-top: 1rem;
+}
+
+.btn-submit:hover {
+    background-color: #b80500;
+}
+
+/* 6. FOOTER */
+.footer {
+    text-align: center;
+    padding: 2rem;
+    border-top: 1px solid #1a1c23;
+    color: #6c727f;
+    font-size: 0.75rem;
+}
+
+/* RESPONSIVIDADE (MOBILE - mock da direita) */
+@media (max-width: 768px) {
+    .topbar {
+        padding: 1rem;
+    }
+
+    .nav-menu {
+        display: none;
+    }
+
+    .hero {
+        padding: 2rem 1rem 1rem 1rem;
+    }
+
+    .hero-container {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .grid-pilotos {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .ingressos-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .form-row {
+        flex-direction: column;
+    }
+
+    .hide-mobile {
+        display: none;
+    }
+}
